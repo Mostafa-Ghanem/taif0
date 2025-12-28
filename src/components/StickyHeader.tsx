@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Phone, MessageCircle, X } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 export const StickyHeader = ({ onOpenModal }: { onOpenModal: () => void }) => {
   const [isVisible, setIsVisible] = useState(true);
@@ -13,13 +14,7 @@ export const StickyHeader = ({ onOpenModal }: { onOpenModal: () => void }) => {
         <div className="flex items-center justify-between h-16 md:h-18">
           {/* Logo - Right side (RTL) */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <span className="text-primary font-bold text-lg">م</span>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="font-bold text-foreground text-lg">مخطط ملقا الطائف</h1>
-              <p className="text-xs text-muted-foreground">حي الواسط</p>
-            </div>
+            <img src={logo} alt="مخطط ملقا الطائف" className="h-12 w-auto" />
           </div>
 
           {/* Actions - Left side (RTL) */}
