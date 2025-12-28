@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,31 +9,31 @@
 @layer base {
   :root {
     /* Premium Real Estate Color Palette - Malqa Al-Taif Brand */
-    --background: 35 23% 96%;
-    --foreground: 209 26% 14%;
+    --background: 209 40% 96%;
+    --foreground: 222 47% 11%;
 
-    --card: 35 23% 98%;
-    --card-foreground: 209 26% 14%;
+    --card: 210 40% 98%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 35 23% 98%;
-    --popover-foreground: 209 26% 14%;
+    --popover: 214 31% 91%;
+    --popover-foreground: 222 47% 11%;
 
     /* Primary - Sage Green/Mint */
-    --primary: 161 12% 73%;
-    --primary-foreground: 209 26% 14%;
+    --primary: 216 19% 26%;
+    --primary-foreground: 210 19% 98%;
     --primary-glow: 161 15% 80%;
 
     /* Secondary - Beige/Cream */
-    --secondary: 35 23% 74%;
-    --secondary-foreground: 209 26% 14%;
+    --secondary: 215 19% 34%;
+    --secondary-foreground: 210 40% 98%;
 
     /* Muted - Soft Beige */
-    --muted: 35 20% 90%;
-    --muted-foreground: 209 20% 40%;
+    --muted: 215 20% 65%;
+    --muted-foreground: 222 47% 11%;
 
     /* Accent - Dark Navy */
-    --accent: 209 26% 14%;
-    --accent-foreground: 35 23% 96%;
+    --accent: 210 40% 98%;
+    --accent-foreground: 215 16% 46%;
 
     /* Success - Oasis Green */
     --success: 161 35% 45%;
@@ -41,14 +43,14 @@
     --whatsapp: 142 70% 45%;
     --whatsapp-foreground: 0 0% 100%;
 
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 35 23% 96%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 85% 97%;
 
-    --border: 35 20% 85%;
-    --input: 35 20% 85%;
-    --ring: 161 12% 73%;
+    --border: 212 26% 83%;
+    --input: 212 26% 83%;
+    --ring: 216 19% 26%;
 
-    --radius: 0.75rem;
+    --radius: 0rem;
 
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(35 23% 96%) 0%, hsl(35 23% 90%) 100%);
@@ -58,60 +60,89 @@
     --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(209 26% 14% / 0.8) 100%);
 
     /* Shadows */
-    --shadow-sm: 0 2px 8px hsl(209 26% 14% / 0.06);
-    --shadow-md: 0 4px 16px hsl(209 26% 14% / 0.08);
-    --shadow-lg: 0 8px 32px hsl(209 26% 14% / 0.12);
-    --shadow-xl: 0 16px 48px hsl(209 26% 14% / 0.16);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
     --shadow-gold: 0 8px 32px hsl(161 12% 73% / 0.25);
 
     /* Sidebar (keeping for compatibility) */
     --sidebar-background: 35 23% 96%;
-    --sidebar-foreground: 209 26% 14%;
-    --sidebar-primary: 161 12% 73%;
-    --sidebar-primary-foreground: 209 26% 14%;
-    --sidebar-accent: 35 23% 90%;
-    --sidebar-accent-foreground: 209 26% 14%;
-    --sidebar-border: 35 20% 85%;
-    --sidebar-ring: 161 12% 73%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 216 19% 26%;
+    --sidebar-primary-foreground: 210 19% 98%;
+    --sidebar-accent: 215 19% 34%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 212 26% 83%;
+    --sidebar-ring: 216 19% 26%;
+    --chart-1: 217 10% 64%;
+    --chart-2: 215 20% 65%;
+    --chart-3: 215 16% 46%;
+    --chart-4: 219 8% 46%;
+    --chart-5: 215 19% 34%;
+    --sidebar: 210 40% 98%;
+    --font-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    --font-serif: 'Crimson Pro', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-mono: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
   }
 
   .dark {
-    --background: 209 26% 10%;
-    --foreground: 35 23% 92%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
 
-    --card: 209 26% 14%;
-    --card-foreground: 35 23% 92%;
+    --card: 217 32% 17%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 209 26% 14%;
-    --popover-foreground: 35 23% 92%;
+    --popover: 215 24% 26%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 161 15% 65%;
-    --primary-foreground: 209 26% 10%;
+    --primary: 212 26% 83%;
+    --primary-foreground: 228 84% 4%;
 
-    --secondary: 35 20% 25%;
-    --secondary-foreground: 35 23% 92%;
+    --secondary: 215 19% 34%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 209 20% 20%;
-    --muted-foreground: 35 15% 65%;
+    --muted: 215 16% 46%;
+    --muted-foreground: 210 40% 98%;
 
-    --accent: 161 12% 73%;
-    --accent-foreground: 209 26% 10%;
+    --accent: 228 84% 4%;
+    --accent-foreground: 215 20% 65%;
 
-    --destructive: 0 65% 45%;
-    --destructive-foreground: 35 23% 96%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 85% 97%;
 
-    --border: 209 20% 22%;
-    --input: 209 20% 22%;
-    --ring: 161 15% 65%;
+    --border: 215 19% 34%;
+    --input: 215 19% 34%;
+    --ring: 212 26% 83%;
 
     --sidebar-background: 209 26% 12%;
-    --sidebar-foreground: 35 23% 92%;
-    --sidebar-primary: 161 15% 65%;
-    --sidebar-primary-foreground: 209 26% 10%;
-    --sidebar-accent: 209 20% 20%;
-    --sidebar-accent-foreground: 35 23% 92%;
-    --sidebar-border: 209 20% 22%;
-    --sidebar-ring: 161 15% 65%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 212 26% 83%;
+    --sidebar-primary-foreground: 228 84% 4%;
+    --sidebar-accent: 215 20% 65%;
+    --sidebar-accent-foreground: 228 84% 4%;
+    --sidebar-border: 215 19% 34%;
+    --sidebar-ring: 212 26% 83%;
+    --chart-1: 215 12% 83%;
+    --chart-2: 212 26% 83%;
+    --chart-3: 215 20% 65%;
+    --chart-4: 217 10% 64%;
+    --chart-5: 215 16% 46%;
+    --sidebar: 217 32% 17%;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
   }
 }
 
