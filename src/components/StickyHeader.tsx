@@ -2,19 +2,19 @@ import { useState } from "react";
 import { Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
-
-export const StickyHeader = ({ onOpenModal }: { onOpenModal: () => void }) => {
+export const StickyHeader = ({
+  onOpenModal
+}: {
+  onOpenModal: () => void;
+}) => {
   const [isVisible, setIsVisible] = useState(true);
-
   if (!isVisible) return null;
-
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm">
+  return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm">
       <div className="container-narrow mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-18">
+        <div className="items-center justify-between h-16 md:h-18 flex flex-row">
           {/* Logo - Right side (RTL) */}
           <div className="flex items-center gap-3">
-            <img src={logo} alt="مخطط ملقا الطائف" className="h-12 w-auto" />
+            <img src={logo} alt="مخطط ملقا الطائف" className="h-12 w-auto object-cover" />
           </div>
 
           {/* Actions - Left side (RTL) */}
@@ -41,11 +41,10 @@ export const StickyHeader = ({ onOpenModal }: { onOpenModal: () => void }) => {
         
         {/* Microcopy */}
         <div className="hidden md:block text-center pb-2 -mt-1">
-          <span className="text-xs text-muted-foreground">
+          <span className="text-xs text-muted-foreground text-right">
             رد خلال وقت العمل – إرسال التفاصيل فورًا
           </span>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
