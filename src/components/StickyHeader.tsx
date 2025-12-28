@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
+
 export const StickyHeader = ({
   onOpenModal
 }: {
@@ -9,12 +10,18 @@ export const StickyHeader = ({
 }) => {
   const [isVisible, setIsVisible] = useState(true);
   if (!isVisible) return null;
-  return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm">
+  
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container-narrow mx-auto px-4">
-        <div className="items-center justify-between h-16 md:h-18 flex flex-row">
+        <div className="items-center justify-between h-20 md:h-24 flex flex-row">
           {/* Logo - Right side (RTL) */}
           <div className="flex items-center gap-3">
-            <img src={logo} alt="مخطط ملقا الطائف" className="h-12 w-auto object-cover" />
+            <img 
+              src={logo} 
+              alt="مخطط ملقا الطائف" 
+              className="h-14 md:h-16 w-auto object-contain" 
+            />
           </div>
 
           {/* Actions - Left side (RTL) */}
@@ -27,7 +34,7 @@ export const StickyHeader = ({
             </a>
             
             <a href="tel:+966500000000" className="hidden md:flex">
-              <Button variant="glass" size="sm">
+              <Button variant="outline" size="sm">
                 <Phone className="h-4 w-4" />
                 <span>اتصل الآن</span>
               </Button>
@@ -46,5 +53,6 @@ export const StickyHeader = ({
           </span>
         </div>
       </div>
-    </header>;
+    </header>
+  );
 };

@@ -14,43 +14,11 @@ export default {
   	},
   	extend: {
   		fontFamily: {
-  			tajawal: [
-  				'Tajawal',
-  				'sans-serif'
-  			],
-  			sans: [
-  				'DM Sans',
-  				'ui-sans-serif',
-  				'system-ui',
-  				'-apple-system',
-  				'BlinkMacSystemFont',
-  				'Segoe UI',
-  				'Roboto',
-  				'Helvetica Neue',
-  				'Arial',
-  				'Noto Sans',
-  				'sans-serif'
-  			],
-  			serif: [
-  				'Crimson Pro',
-  				'ui-serif',
-  				'Georgia',
-  				'Cambria',
-  				'Times New Roman',
-  				'Times',
-  				'serif'
-  			],
-  			mono: [
-  				'SF Mono',
-  				'ui-monospace',
-  				'SFMono-Regular',
-  				'Menlo',
-  				'Monaco',
-  				'Consolas',
-  				'Liberation Mono',
-  				'Courier New',
-  				'monospace'
-  			]
+  			cairo: ['Cairo', 'Tajawal', 'sans-serif'],
+  			tajawal: ['Tajawal', 'Cairo', 'sans-serif'],
+  			sans: ['Cairo', 'Tajawal', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+  			serif: ['Crimson Pro', 'ui-serif', 'Georgia', 'serif'],
+  			mono: ['SF Mono', 'ui-monospace', 'monospace']
   		},
   		colors: {
   			border: 'hsl(var(--border))',
@@ -104,6 +72,13 @@ export default {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
+  			},
+  			brand: {
+  				bg: 'hsl(var(--bg))',
+  				bgAlt: 'hsl(var(--bg-alt))',
+  				navy: 'hsl(var(--navy))',
+  				beige: 'hsl(var(--beige))',
+  				navyText: 'hsl(var(--navy-text))'
   			}
   		},
   		borderRadius: {
@@ -125,56 +100,28 @@ export default {
   		},
   		keyframes: {
   			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
+  				from: { height: '0' },
+  				to: { height: 'var(--radix-accordion-content-height)' }
   			},
   			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
+  				from: { height: 'var(--radix-accordion-content-height)' },
+  				to: { height: '0' }
   			},
   			'fade-in': {
-  				from: {
-  					opacity: '0'
-  				},
-  				to: {
-  					opacity: '1'
-  				}
+  				from: { opacity: '0' },
+  				to: { opacity: '1' }
   			},
   			'slide-up': {
-  				from: {
-  					opacity: '0',
-  					transform: 'translateY(20px)'
-  				},
-  				to: {
-  					opacity: '1',
-  					transform: 'translateY(0)'
-  				}
+  				from: { opacity: '0', transform: 'translateY(20px)' },
+  				to: { opacity: '1', transform: 'translateY(0)' }
   			},
   			'slide-down': {
-  				from: {
-  					opacity: '0',
-  					transform: 'translateY(-20px)'
-  				},
-  				to: {
-  					opacity: '1',
-  					transform: 'translateY(0)'
-  				}
+  				from: { opacity: '0', transform: 'translateY(-20px)' },
+  				to: { opacity: '1', transform: 'translateY(0)' }
   			},
   			shimmer: {
-  				'0%': {
-  					backgroundPosition: '-200% 0'
-  				},
-  				'100%': {
-  					backgroundPosition: '200% 0'
-  				}
+  				'0%': { backgroundPosition: '-200% 0' },
+  				'100%': { backgroundPosition: '200% 0' }
   			}
   		},
   		animation: {
