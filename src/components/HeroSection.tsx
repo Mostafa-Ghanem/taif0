@@ -1,4 +1,4 @@
-import { MapPin, Maximize2, QrCode } from "lucide-react";
+import { MapPin, Maximize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-masterplan.jpg";
 
@@ -113,10 +113,6 @@ export const HeroSection = ({ onOpenModal, onOpenBookVisit }: HeroSectionProps) 
                 </div>
               </div>
 
-              {/* QR Code */}
-              <div className="absolute -top-4 -left-4 w-20 h-20 rounded-xl bg-card shadow-lg border border-border flex items-center justify-center">
-                <QrCode className="h-10 w-10 text-muted-foreground/50" />
-              </div>
             </div>
           </div>
         </div>
