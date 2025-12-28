@@ -1,19 +1,19 @@
-import { MapPin, Maximize2 } from "lucide-react";
+import { MapPin, Maximize2, QrCode } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-masterplan.jpg";
+
 interface HeroSectionProps {
   onOpenModal: () => void;
   onOpenBookVisit: () => void;
 }
-export const HeroSection = ({
-  onOpenModal,
-  onOpenBookVisit
-}: HeroSectionProps) => {
-  return <section className="relative min-h-screen pt-24 md:pt-28 pb-16 overflow-hidden">
+
+export const HeroSection = ({ onOpenModal, onOpenBookVisit }: HeroSectionProps) => {
+  return (
+    <section className="relative min-h-screen pt-24 md:pt-28 pb-16 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
-      backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-    }} />
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+      }} />
 
       <div className="container-narrow mx-auto px-4 relative">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -60,7 +60,12 @@ export const HeroSection = ({
               </Button>
             </div>
 
-            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium">
+            <a 
+              href="https://maps.google.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
+            >
               <MapPin className="h-4 w-4" />
               افتح الموقع على قوقل ماب
             </a>
@@ -76,7 +81,11 @@ export const HeroSection = ({
             <div className="relative">
               {/* Main Plan Image */}
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-xl group cursor-pointer">
-                <img src={heroImage} alt="المخطط الرئيسي لمخطط ملقا الطائف" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img 
+                  src={heroImage} 
+                  alt="المخطط الرئيسي لمخطط ملقا الطائف"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
                 
                 {/* Overlay content */}
@@ -98,26 +107,38 @@ export const HeroSection = ({
               </div>
 
               {/* Mini Map */}
-              
+              <div className="absolute -bottom-4 -right-4 w-32 h-24 rounded-xl bg-card shadow-lg border border-border overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-secondary/50 to-muted/50 flex items-center justify-center">
+                  <MapPin className="h-6 w-6 text-primary/50" />
+                </div>
+              </div>
 
+              {/* QR Code */}
+              <div className="absolute -top-4 -left-4 w-20 h-20 rounded-xl bg-card shadow-lg border border-border flex items-center justify-center">
+                <QrCode className="h-10 w-10 text-muted-foreground/50" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
-const StatCard = ({
-  value,
-  unit,
-  label
-}: {
-  value: string;
-  unit?: string;
+
+const StatCard = ({ 
+  value, 
+  unit, 
+  label 
+}: { 
+  value: string; 
+  unit?: string; 
   label: string;
-}) => <div className="bg-card rounded-xl p-4 shadow-sm border border-border/50 hover:shadow-md transition-shadow">
+}) => (
+  <div className="bg-card rounded-xl p-4 shadow-sm border border-border/50 hover:shadow-md transition-shadow">
     <div className="flex items-baseline gap-1 mb-1">
       <span className="text-xl font-bold text-foreground">{value}</span>
       {unit && <span className="text-sm text-primary font-medium">{unit}</span>}
     </div>
     <p className="text-xs text-muted-foreground">{label}</p>
-  </div>;
+  </div>
+);
